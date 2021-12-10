@@ -1,0 +1,10 @@
+{{ bootstrap.load_css() }}
+
+
+<div class="container">
+    <ul class="list-group">
+        {% for item in listOfMovie %}
+              <li class="list-group-item">{{ item.movie }}</li>
+        {% endfor %}
+    </ul>
+</div>

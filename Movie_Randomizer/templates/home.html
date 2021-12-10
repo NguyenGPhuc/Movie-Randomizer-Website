@@ -1,0 +1,63 @@
+{{ bootstrap.load_css() }}
+
+<div class="container">
+    <h1>Movie Randomizer</h1>
+
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        {{ form.movie_title.label }} 
+        {{ form.movie_title(size=32) }}
+        <input type="submit" value="Search">
+    </form>
+</div>
+
+
+<!-- Display 3 random images from list -->
+<div class="container">
+    <h1> Movie Randomizer </h1>
+    <br>
+
+    <!-- Tried to center contents, didn't work -->
+    <div class="col justify-content-center align-self-center">
+        <a href="{{ imageURL }}"> {{ image_data_0['Title'] }}
+            <div>
+                <img src="{{ image_data_0['Poster'] }}" width="250" class="img-fluid rounded" alt="">
+            </div>
+        </a>
+    </div>
+    <br>
+    <div class="col justify-content-center align-self-center">
+        <a href="{{ imageURL }}"> {{ image_data_1['Title'] }}
+            <div>
+                <img src="{{ image_data_1['Poster'] }}" width="250" class="img-fluid rounded" alt="">
+            </div>
+        </a>
+    </div>
+    <br>
+    <div class="col justify-content-center align-self-center">
+        <a href="{{ imageURL }}"> {{ image_data_2['Title'] }}
+            <div>
+                <img src="{{ image_data_2['Poster'] }}" width="250" class="img-fluid rounded" alt="">
+            </div>
+        </a>
+    </div>
+    <br>
+    <div class="col justify-content-center align-self-center">
+        <a href="{{ imageURL }}"> {{ image_data_3['Title'] }}
+            <div>
+                <img src="{{ image_data_3['Poster'] }}" width="250" class="img-fluid rounded" alt="">
+            </div>
+        </a>
+    </div>
+    <br>
+    <div class="col justify-content-center align-self-center">
+        <a href="{{ imageURL }}"> {{ image_data_4['Title'] }}
+            <div>
+                <img src="{{ image_data_4['Poster'] }}" width="250" class="img-fluid rounded" alt="imageURL">
+            </div>
+        </a>
+    </div>
+    <br>
+</div>
+
+   

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, request, render_template, redirect
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
@@ -104,12 +104,33 @@ def store_movie(my_movie):
 def home():
     form = MovieList()
     if form.validate_on_submit():
-        store_movie(form.movie_title.data)
-        return redirect('/detail')
+        global keyword_title 
+        keyword_title = form.movie_title.data
+        return redirect('/movie_detail')
 
     shuffle_list = searchAPI('')
 
     return render_template('home.html', form=form, image_data = shuffle_list)
+
+@app.route('/movie_detail')
+def movie_detail():
+  
+  payload = {
+    'apikey': 'ef955c2e',
+    's': keyword_title,
+    'type': 'movie',
+  }
+  endpoint = "http://www.omdbapi.com/?"
+
+  try:
+      r = requests.get(endpoint, params=payload)
+      data = r.json()
+      print(data)
+      size = len(data['Search'])
+  except:
+      print('please try again')
+
+  return render_template('movie_detail.html', data=data, size=size)
 
 
 # Detail of specific movie when clicked (WIP)
@@ -119,4 +140,5 @@ def detail(id):
   # print (id['Ratings']['Metascore'])
   selected_id = callAPI(id)
   print (selected_id['Ratings'])
+
   return render_template('detail.html', selected_id = selected_id)

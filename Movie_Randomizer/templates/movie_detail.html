@@ -1,0 +1,14 @@
+{{ bootstrap.load_css() }}
+
+<h1 class="text-center" class="text-uppercase" class="font-weight-bold">Movie Detail</h1> <br>
+<div class="d-flex align-content-around flex-wrap">
+    {% for movie in data['Search'] %}
+    <div class="p-2">
+        <p class="font-weight-bold">Movie Title: {{movie.Title}}</p>
+        <p class="font-weight-bold">Year: {{movie.Year}}</p>
+        <p class="font-weight-bold">imdbID: {{movie.imdbID}}</p>
+        <p class="font-weight-bold">Type: {{movie.Type}}</p>
+    </div><br>
+    <div class="p-2"><img src="{{movie.Poster}}" width="150" height="150" class="img-fluid rounded" alt=""></div>
+    {% endfor %}
+</div>

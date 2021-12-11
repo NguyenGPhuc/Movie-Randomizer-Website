@@ -106,31 +106,30 @@ def home():
     if form.validate_on_submit():
         global keyword_title 
         keyword_title = form.movie_title.data
-        return redirect('/movie_detail')
+        return redirect('/detail')
 
     shuffle_list = searchAPI('')
 
     return render_template('home.html', form=form, image_data = shuffle_list)
 
-@app.route('/movie_detail')
+@app.route('/detail')
 def movie_detail():
   
   payload = {
     'apikey': 'ef955c2e',
-    's': keyword_title,
-    'type': 'movie',
+    't': keyword_title,
   }
   endpoint = "http://www.omdbapi.com/?"
 
   try:
       r = requests.get(endpoint, params=payload)
-      data = r.json()
-      print(data)
-      size = len(data['Search'])
+      selected_id = r.json()
+      print(selected_id)
+      size = len(selected_id)
   except:
       print('please try again')
 
-  return render_template('movie_detail.html', data=data, size=size)
+  return render_template('detail.html', selected_id = selected_id)
 
 
 # Detail of specific movie when clicked (WIP)

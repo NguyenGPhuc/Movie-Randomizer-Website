@@ -1,9 +1,33 @@
 {{ bootstrap.load_css() }}
 
 
-<h1>Movie Detail</h1>
+<!-- Display information and correct resolution -->
 <div class="container">
-    {% for item in data %}
-        <p>{{item.Title}}</p>
-    {% endfor %}
+    <h2><b> {{ selected_id['Title'] }}</b></h2>
+    <br>
+
+    <figure>
+        <img src=" {{selected_id['Poster']}}" class="img-fluid rounded" alt="">
+        <figcaption> Runtime: {{selected_id['Runtime']}}</figcaption>
+    </figure>
+
+
+    <q>{{selected_id['Genre']}}</q>
+    
+    <q>{{selected_id['Director']}}</q>
+
+    <q>{{selected_id['Released']}}</q>
+
+    <q>{{selected_id['Language']}}</q>
+
+    <br><br>
+    <q>{{selected_id['Ratings'][0]['Source']}}: {{selected_id['Ratings'][0]['Value']}}</q>
+
+    <q>{{selected_id['Ratings'][1]['Source']}}: {{selected_id['Ratings'][1]['Value']}}</q>
+
+    <q>{{selected_id['Ratings'][2]['Source']}}: {{selected_id['Ratings'][2]['Value']}}</q>
+    <br><br>
+
+    <q>{{selected_id['Plot']}}</q>
+
 </div>

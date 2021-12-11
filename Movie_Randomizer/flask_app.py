@@ -132,6 +132,7 @@ def movie_detail():
 
   return render_template('movie_detail.html', data=data, size=size)
 
+
 # Detail of specific movie when clicked (WIP)
 @app.route('/detail/<id>')
 def detail(id):
@@ -139,4 +140,5 @@ def detail(id):
   # print (id['Ratings']['Metascore'])
   selected_id = callAPI(id)
   print (selected_id['Ratings'])
+
   return render_template('detail.html', selected_id = selected_id)

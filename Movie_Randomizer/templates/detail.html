@@ -1,10 +1,9 @@
 {{ bootstrap.load_css() }}
 
 
+<h1>Movie Detail</h1>
 <div class="container">
-    <ul class="list-group">
-        {% for item in listOfMovie %}
-              <li class="list-group-item">{{ item.movie }}</li>
-        {% endfor %}
-    </ul>
+    {% for item in data %}
+        <p>{{item.Title}}</p>
+    {% endfor %}
 </div>

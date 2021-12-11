@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, request, render_template, redirect
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
@@ -80,7 +80,7 @@ def store_movie(my_movie):
 def home():
     form = MovieList()
     if form.validate_on_submit():
-        store_movie(form.movie_title.data)
+        title = form.movie_title.data
         return redirect('/detail')
 
 
@@ -92,4 +92,12 @@ def home():
 # Detail of specific movie when clicked (WIP)
 @app.route('/detail')
 def detail():
-    return render_template('detail.html', listOfMovie=listOfMovie)
+    payload2 = {
+        'apikey': my_key,
+        's': title,
+        'type': 'movie',
+    }
+    r = requests.get(endpoint, params=payload2)
+    data = r.json()
+    print(data)
+    return render_template('detail.html', data=data)

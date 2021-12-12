@@ -131,6 +131,7 @@ def movie_detail():
 
   return render_template('detail.html', selected_id = selected_id)
 
+print ("NO DETAIL MOVIE")
 
 # Detail of specific movie when clicked (WIP)
 @app.route('/detail/<id>')

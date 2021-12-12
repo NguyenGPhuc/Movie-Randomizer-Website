@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, request, render_template, redirect
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
@@ -22,7 +22,9 @@ def searchAPI(title):
   my_key = 'ef955c2e'
 
   # Random names that use to generate first 5 movies.
-  deault_title = ["Battle", "End", "World", "War", "Sea", "Transform", "Avenger", "Flower", "Dog", "Cat", "Love"]
+  deault_title = ["Battle", "End", "World", "War", "Sea", "Transform", 
+                  "Avenger", "Flower", "Dog", "Cat", "Love", "Life", "Star",
+                  "God", "Soul"]
   random_default_title = random.sample(deault_title, 1)
   print(random_default_title)
 
@@ -104,13 +106,32 @@ def store_movie(my_movie):
 def home():
     form = MovieList()
     if form.validate_on_submit():
-        store_movie(form.movie_title.data)
+        global keyword_title 
+        keyword_title = form.movie_title.data
         return redirect('/detail')
 
     shuffle_list = searchAPI('')
 
     return render_template('home.html', form=form, image_data = shuffle_list)
 
+@app.route('/detail')
+def movie_detail():
+  
+  payload = {
+    'apikey': 'ef955c2e',
+    't': keyword_title,
+  }
+  endpoint = "http://www.omdbapi.com/?"
+
+  try:
+      r = requests.get(endpoint, params=payload)
+      selected_id = r.json()
+      print(selected_id)
+      size = len(selected_id)
+  except:
+      print('please try again')
+
+  return render_template('detail.html', selected_id = selected_id)
 
 # Detail of specific movie when clicked (WIP)
 @app.route('/detail/<id>')
@@ -119,4 +140,5 @@ def detail(id):
   # print (id['Ratings']['Metascore'])
   selected_id = callAPI(id)
   print (selected_id['Ratings'])
+
   return render_template('detail.html', selected_id = selected_id)

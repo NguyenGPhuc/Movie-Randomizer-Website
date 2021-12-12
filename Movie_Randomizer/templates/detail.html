@@ -1,33 +1,45 @@
 {{ bootstrap.load_css() }}
 
 
+
 <!-- Display information and correct resolution -->
 <div class="container">
-    <h2><b> {{ selected_id['Title'] }}</b></h2>
-    <br>
+    <h1>Movie Detail</h1>
 
+    <br>
     <figure>
         <img src=" {{selected_id['Poster']}}" class="img-fluid rounded" alt="">
-        <figcaption> Runtime: {{selected_id['Runtime']}}</figcaption>
+        <figcaption> <h3> {{ selected_id['Title'] }} </h3></figcaption>
     </figure>
 
+    <b>Runtime: </b>{{selected_id['Runtime']}}
+    <br>
 
-    <q>{{selected_id['Genre']}}</q>
+    <b>Genre: </b>{{selected_id['Genre']}}
+    <br>
     
-    <q>{{selected_id['Director']}}</q>
+    <b>Director: </b>{{selected_id['Director']}}
+    <br>
 
-    <q>{{selected_id['Released']}}</q>
+    <b>Released Date: </b>{{selected_id['Released']}}
+    <br>
 
-    <q>{{selected_id['Language']}}</q>
-
-    <br><br>
-    <q>{{selected_id['Ratings'][0]['Source']}}: {{selected_id['Ratings'][0]['Value']}}</q>
-
-    <q>{{selected_id['Ratings'][1]['Source']}}: {{selected_id['Ratings'][1]['Value']}}</q>
-
-    <q>{{selected_id['Ratings'][2]['Source']}}: {{selected_id['Ratings'][2]['Value']}}</q>
+    <b>Language: </b>{{selected_id['Language']}}
     <br><br>
 
-    <q>{{selected_id['Plot']}}</q>
+    <b>Ratings</b>
+    <br>
 
-</div>
+    <b>{{selected_id['Ratings'][0]['Source']}}: </b> {{selected_id['Ratings'][0]['Value']}}
+    <br>
+
+    <b>{{selected_id['Ratings'][1]['Source']}}: </b>{{selected_id['Ratings'][1]['Value']}}
+    <br><br>
+
+    <b>Summary: </b><q>{{selected_id['Plot']}}</q>
+    <br><br><br>
+    
+    <a href="{{ url_for('home') }}">
+        <button type="button" class="btn btn-primary">Back to Main Menu</button>
+    </a>
+

@@ -22,7 +22,9 @@ def searchAPI(title):
   my_key = 'ef955c2e'
 
   # Random names that use to generate first 5 movies.
-  deault_title = ["Battle", "End", "World", "War", "Sea", "Transform", "Avenger", "Flower", "Dog", "Cat", "Love"]
+  deault_title = ["Battle", "End", "World", "War", "Sea", "Transform", 
+                  "Avenger", "Flower", "Dog", "Cat", "Love", "Life", "Star",
+                  "God", "Soul"]
   random_default_title = random.sample(deault_title, 1)
   print(random_default_title)
 
@@ -130,8 +132,6 @@ def movie_detail():
       print('please try again')
 
   return render_template('detail.html', selected_id = selected_id)
-
-print ("NO DETAIL MOVIE")
 
 # Detail of specific movie when clicked (WIP)
 @app.route('/detail/<id>')

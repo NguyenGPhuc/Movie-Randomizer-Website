@@ -1,0 +1,51 @@
+html {
+    font-size: 17px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+  }
+  
+  body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .col justify-content-center align-self-center {
+    padding: 40px 20px;
+  }
+  
+  .col justify-content-center align-self-center {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  body {
+      background: linear-gradient(-45deg,#05f905, #5fec00,#81df00, #9ad200, #acc400, #bbb600, #c7a700, #d09800, #d78900, #dc7a00, #de6b00,#de5c00, #dc4d12, #d73e24,#d13030  );
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+  

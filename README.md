@@ -12,3 +12,13 @@ CST-205
 ## Description: 
 The application build a movie randomizer website that will display different films on the home page and by searching a keyword will display movies based on the title of the movie. The application uses a movie API called OMDB API, it is based off of the REST framework. Link to API: http://www.omdbapi.com/
 
+## Requirements: 
+Must have Flask, Flask_bootstrap, request, and random installed
+
+## How to run program: 
+1. Go to the project directory under - /Movie_Randomizer
+2. Have the your virtual environment activated
+3. Type the following lines: $env:FLASK_APP = "flask_app.py"
+                             $env:FLASK_DEBUG = "1"
+                             flask run
+4. The should be running on the 5000

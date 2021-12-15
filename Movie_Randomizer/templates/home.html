@@ -1,0 +1,62 @@
+{{ bootstrap.load_css() }}
+
+<div class="container">
+    <h1>Movie Randomizer</h1>
+
+    <form method="POST" action="/">
+        {{ form.csrf_token }}
+        {{ form.movie_title.label }} 
+        {{ form.movie_title(size=32) }}
+        <input type="submit">
+    </form>
+</div>
+
+
+<!-- Display 3 random images from list -->
+<div class="container">
+    <h1> Movie Randomizer </h1>
+    <br>
+
+    <!-- Tried to center contents, didn't work -->
+    <div class="col justify-content-center align-self-center">
+        <a href="{{  url_for('detail', id=image_data[0]['imdbID']) }}"> {{ image_data[0]['Title'] }}
+            <div>
+                <img src="{{ image_data[0]['Poster'] }}" width="250" class="img-fluid rounded" alt="">
+            </div>
+        </a>
+    </div>
+    <br>
+    <div class="col justify-content-center align-self-center">
+        <a href="{{ url_for('detail', id=image_data[1]['imdbID']) }}"> {{ image_data[1]['Title'] }}
+            <div>
+                <img src="{{ image_data[1]['Poster'] }}" width="250" class="img-fluid rounded" alt="">
+            </div>
+        </a>
+    </div>
+    <br>
+    <div class="col justify-content-center align-self-center">
+        <a href="{{ url_for('detail', id=image_data[2]['imdbID']) }}"> {{ image_data[2]['Title'] }}
+            <div>
+                <img src="{{ image_data[2]['Poster'] }}" width="250" class="img-fluid rounded" alt="">
+            </div>
+        </a>
+    </div>
+    <br>
+    <div class="col justify-content-center align-self-center">
+        <a href="{{ url_for('detail', id=image_data[3]['imdbID']) }}"> {{ image_data[3]['Title'] }}
+            <div>
+                <img src="{{ image_data[3]['Poster'] }}" width="250" class="img-fluid rounded" alt="">
+            </div>
+        </a>
+    </div>
+    <br>
+    <div class="col justify-content-center align-self-center">
+        <a href="{{ url_for('detail', id=image_data[4]['imdbID']) }}"> {{ image_data[4]['Title'] }}
+            <div>
+                <img src="{{ image_data[4]['Poster'] }}" width="250" class="img-fluid rounded" alt="imageURL">
+            </div>
+        </a>
+    </div>
+    <br>
+</div>
+   

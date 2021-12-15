@@ -20,7 +20,7 @@ The application builds a movie randomizer website that display different films o
 ## How to run program: 
 1. Go to the project directory under /Movie_Randomizer
 2. Have your virtual environment activated
-**Type the following lines:** 
+3. **Type the following lines:** 
 * $env:FLASK_APP = "flask_app.py"
 * $env:FLASK_DEBUG = "1"
 * flask run

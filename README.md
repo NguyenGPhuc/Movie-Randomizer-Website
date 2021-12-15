@@ -10,7 +10,7 @@ CST-205
 12/15/2021 
 
 ## Description: 
-The application build a movie randomizer website that will display different films on the home page and by searching a keyword will display movies based on the title of the movie. The application uses a movie API called OMDB API, it is based off of the REST framework. Link to API: http://www.omdbapi.com/
+The application builds a movie randomizer website that display different films on the home page. Also by searching the title of the movie it will render a different page that will show more details about the movie that was searched. The application uses a movie API called OMDB API, it is based off of the REST framework. Link to API: http://www.omdbapi.com/
 
 ## Requirements: 
 **Following shoule be installed to your virtual enviroment**

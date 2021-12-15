@@ -9,6 +9,9 @@ CST-205
 ## DATE:
 12/15/2021 
 
+## Link to GitHub: 
+https://github.com/sagarprasad63574/CST205-Movie-Randomizer/
+
 ## Description: 
 The application builds a movie randomizer website that display different films on the home page. Also by searching the title of the movie it will render a different page that will show more details about the movie that was searched. The application uses a movie API called OMDB API, it is based off of the REST framework. Link to API: http://www.omdbapi.com/
 

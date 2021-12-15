@@ -17,8 +17,8 @@ Must have Flask, Flask_bootstrap, request, and random installed
 
 ## How to run program: 
 1. Go to the project directory under - /Movie_Randomizer
-2. Have the your virtual environment activated
-3. Type the following lines: $env:FLASK_APP = "flask_app.py"
-                             $env:FLASK_DEBUG = "1"
-                             flask run
-4. The should be running on the 5000
+2. Have your virtual environment activated
+3. Type the following lines: * $env:FLASK_APP = "flask_app.py"
+                             * $env:FLASK_DEBUG = "1"
+                             * flask run
+4. The website should be running on the 5000

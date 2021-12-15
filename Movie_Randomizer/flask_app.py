@@ -1,3 +1,11 @@
+# Course: CST 205 
+# Title: Movie Randomizer
+# Author: Paul Nguyen, Sagar Prasad, Alexis Lange-Kelly, Mason Allred
+# Paul Nguyen: worked on mainly on the API functionalities. Some of the methods are: searchAPI(title), callAPI(id), home()
+# Sagar Prasad: worked on movie_deatil() and API 
+# Mason Allred: worked on detail.html page 
+# Alexis Lange-Kelly: worked on the home.html page
+
 from flask import Flask, request, render_template, redirect, url_for
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -15,8 +23,10 @@ import urllib.request
 app = Flask(__name__)
 bootstrap = Bootstrap(app)
 
+#Secret key
 app.config['SECRET_KEY'] = 'csumb-otter'
 
+#This method uses the API given a title
 def searchAPI(title):
   my_key = 'ef955c2e'
 
@@ -55,13 +65,14 @@ def searchAPI(title):
   except:
     print('please try again')
 
-# searchAPI('')
-
+#This method calls the API and send a movie title as a parameter to search for movies based on the given title
+#This will return a Json object that can be send to the html pages
 def callAPI(id):
   my_key = 'ef955c2e'
 
   print ("In call API")
 
+#Api key, id, plot
   payload = {
   'apikey': my_key,
   'i': id,
@@ -85,7 +96,6 @@ def callAPI(id):
 
   
 callAPI('tt3896198')
-
 class MovieList(FlaskForm):
     movie_title = StringField('Movie Title',
     validators=[DataRequired()]
@@ -113,6 +123,7 @@ def home():
 
     return render_template('home.html', form=form, image_data = shuffle_list)
 
+#Renders the detail page based on the keyword
 @app.route('/detail')
 def movie_detail():
   

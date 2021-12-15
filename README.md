@@ -24,3 +24,6 @@ The application builds a movie randomizer website that display different films o
 * $env:FLASK_APP = "flask_app.py"
 * $env:FLASK_DEBUG = "1"
 * flask run
+
+## Future Work: 
+Developing a better functionality to search for a movie based on gerne, year, description, etc

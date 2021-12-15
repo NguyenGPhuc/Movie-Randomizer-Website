@@ -1,0 +1,48 @@
+{{ bootstrap.load_css() }}
+
+<!-- Display information and correct resolution -->
+<div class = "container">
+    <body style="background-color:lightslategrey">
+    <h1 class = "center", style = "font-family:'Segoe UI'; color: linen">Movie Details</h1>
+    <style>
+        .center {
+            text-align: center
+        }
+    </style>
+    <br>
+    
+    <figure>
+        <img src = " {{selected_id['Poster']}}", class = "img-fluid rounded", alt = "">
+        <figcaption><h3 style = "font-family:'Franklin Gothic Medium'; color: linen">{{ selected_id['Title'] }}</h3></figcaption>
+    </figure>
+    
+    <b style = "font-family: Verdana; color: linen">Runtime:</b> <span style = "font-family: Arial">{{selected_id['Runtime']}} </span>
+    <br>
+
+    <b style = "font-family: Verdana; color: linen">Genre:</b> <span style = "font-family: Arial">{{selected_id['Genre']}}</span>
+    <br>
+    
+    <b style = "font-family: Verdana; color: linen">Director:</b> <span style = "font-family: Arial">{{selected_id['Director']}} </span>
+    <br>
+
+    <b style = "font-family: Verdana; color: linen">Release Date:</b> <span style = "font-family: Arial">{{selected_id['Released']}} </span>
+    <br>
+
+    <b style = "font-family: Verdana; color: linen">Language:</b> <span style = "font-family: Arial">{{selected_id['Language']}} </span>
+    <br><br>
+
+    <b style = "font-family: Verdana; color: linen">Ratings</b>
+    <br>
+
+    <span style = "font-family: Arial; color: linen"><b style = >{{selected_id['Ratings'][0]['Source']}}:</b> {{selected_id['Ratings'][0]['Value']}}</span>
+    <br>
+
+    <span style = "font-family: Arial; color: linen"><b>{{selected_id['Ratings'][1]['Source']}}:</b> {{selected_id['Ratings'][1]['Value']}}</span>
+    <br><br>
+
+    <b style = "font-family: Verdana; color: linen">Summary:</b> <q style = "font-family: Arial">{{selected_id['Plot']}}</q>
+    <br><br><br>
+    
+    <a href = "{{ url_for('home') }}">
+        <button type = "button" class = "btn btn-primary">Return</button>
+    </a>

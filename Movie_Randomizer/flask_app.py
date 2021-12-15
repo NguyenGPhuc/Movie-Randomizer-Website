@@ -10,7 +10,6 @@ from PIL import Image
 import requests, json
 import random
 from random import shuffle
-import numpy as np
 import urllib.request
 
 app = Flask(__name__)
@@ -24,7 +23,7 @@ def searchAPI(title):
   # Random names that use to generate first 5 movies.
   deault_title = ["Battle", "End", "World", "War", "Sea", "Transform", 
                   "Avenger", "Flower", "Dog", "Cat", "Love", "Life", "Star",
-                  "God", "Soul"]
+                  "God", "Soul", "Earth", "Sky", "Fire", "Sea"]
   random_default_title = random.sample(deault_title, 1)
   print(random_default_title)
 

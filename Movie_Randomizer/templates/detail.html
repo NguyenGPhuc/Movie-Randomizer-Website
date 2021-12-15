@@ -1,44 +1,48 @@
 {{ bootstrap.load_css() }}
 
-
-
 <!-- Display information and correct resolution -->
-<div class="container">
-    <h1>Movie Detail</h1>
-
-    <br>
-    <figure>
-        <img src=" {{selected_id['Poster']}}" class="img-fluid rounded" alt="">
-        <figcaption> <h3> {{ selected_id['Title'] }} </h3></figcaption>
-    </figure>
-
-    <b>Runtime: </b>{{selected_id['Runtime']}}
-    <br>
-
-    <b>Genre: </b>{{selected_id['Genre']}}
+<div class = "container">
+    <body style="background-color:lightslategrey">
+    <h1 class = "center", style = "font-family:'Segoe UI'; color: linen">Movie Details</h1>
+    <style>
+        .center {
+            text-align: center
+        }
+    </style>
     <br>
     
-    <b>Director: </b>{{selected_id['Director']}}
+    <figure>
+        <img src = " {{selected_id['Poster']}}", class = "img-fluid rounded", alt = "">
+        <figcaption><h3 style = "font-family:'Franklin Gothic Medium'; color: linen">{{ selected_id['Title'] }}</h3></figcaption>
+    </figure>
+    
+    <b style = "font-family: Verdana; color: linen">Runtime:</b> <span style = "font-family: Arial">{{selected_id['Runtime']}} </span>
     <br>
 
-    <b>Released Date: </b>{{selected_id['Released']}}
+    <b style = "font-family: Verdana; color: linen">Genre:</b> <span style = "font-family: Arial">{{selected_id['Genre']}}</span>
+    <br>
+    
+    <b style = "font-family: Verdana; color: linen">Director:</b> <span style = "font-family: Arial">{{selected_id['Director']}} </span>
     <br>
 
-    <b>Language: </b>{{selected_id['Language']}}
+    <b style = "font-family: Verdana; color: linen">Release Date:</b> <span style = "font-family: Arial">{{selected_id['Released']}} </span>
+    <br>
+
+    <b style = "font-family: Verdana; color: linen">Language:</b> <span style = "font-family: Arial">{{selected_id['Language']}} </span>
     <br><br>
 
-    <b>Ratings</b>
+    <b style = "font-family: Verdana; color: linen">Ratings</b>
     <br>
 
-    <b>{{selected_id['Ratings'][0]['Source']}}: </b> {{selected_id['Ratings'][0]['Value']}}
+    <span style = "font-family: Arial; color: linen"><b style = >{{selected_id['Ratings'][0]['Source']}}:</b> {{selected_id['Ratings'][0]['Value']}}</span>
     <br>
 
-    <b>{{selected_id['Ratings'][1]['Source']}}: </b>{{selected_id['Ratings'][1]['Value']}}
+    <span style = "font-family: Arial; color: linen"><b>{{selected_id['Ratings'][1]['Source']}}:</b> {{selected_id['Ratings'][1]['Value']}}</span>
     <br><br>
 
-    <b>Summary: </b><q>{{selected_id['Plot']}}</q>
+    <b style = "font-family: Verdana; color: linen">Summary:</b> <q style = "font-family: Arial">{{selected_id['Plot']}}</q>
     <br><br><br>
     
-    <a href="{{ url_for('home') }}">
-        <button type="button" class="btn btn-primary">Return</button>
+    <a href = "{{ url_for('home') }}">
+        <button type = "button" class = "btn btn-primary">Return</button>
     </a>

@@ -22,40 +22,52 @@
 
 
     <!-- Tried to center contents, didn't work -->
-    <div class="col justify-content-center align-self-center">
+    <div class="text-center">
         <a href="{{  url_for('detail', id=image_data[0]['imdbID']) }}"> {{ image_data[0]['Title'] }}
+    </div>
+    <div class="col justify-content-center align-self-center">
             <div>
                 <img src="{{ image_data[0]['Poster'] }}" width="250" class="img-fluid rounded" alt="">
             </div>
         </a>
     </div>
     <br>
-    <div class="col justify-content-center align-self-center">
+
+    <div class="text-center">
         <a href="{{ url_for('detail', id=image_data[1]['imdbID']) }}"> {{ image_data[1]['Title'] }}
+    </div>
+
+    <div class="col justify-content-center align-self-center">
             <div>
                 <img src="{{ image_data[1]['Poster'] }}" width="250" class="img-fluid rounded" alt="">
             </div>
         </a>
     </div>
     <br>
-    <div class="col justify-content-center align-self-center">
+    <div class="text-center">
         <a href="{{ url_for('detail', id=image_data[2]['imdbID']) }}"> {{ image_data[2]['Title'] }}
+    </div>
+    <div class="col justify-content-center align-self-center">
             <div>
                 <img src="{{ image_data[2]['Poster'] }}" width="250" class="img-fluid rounded" alt="">
             </div>
         </a>
     </div>
     <br>
-    <div class="col justify-content-center align-self-center">
+    <div class="text-center">
         <a href="{{ url_for('detail', id=image_data[3]['imdbID']) }}"> {{ image_data[3]['Title'] }}
+    </div>
+    <div class="col justify-content-center align-self-center">
             <div>
                 <img src="{{ image_data[3]['Poster'] }}" width="250" class="img-fluid rounded" alt="">
             </div>
         </a>
     </div>
     <br>
-    <div class="col justify-content-center align-self-center">
+    <div class="text-center">
         <a href="{{ url_for('detail', id=image_data[4]['imdbID']) }}"> {{ image_data[4]['Title'] }}
+    </div>
+    <div class="col justify-content-center align-self-center">
             <div>
                 <img src="{{ image_data[4]['Poster'] }}" width="250" class="img-fluid rounded" alt="imageURL">
             </div>
